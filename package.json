@@ -1,12 +1,12 @@
 {
-  "name": "vue-burger-menu",
+  "name": "apotek-uas",
   "version": "2.0.5",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name vue-burger-menu ./src/components/index.js"
+    "build-bundle": "vue-cli-service build --target lib --name apotekuas ./src/components/index.js"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mbj36/vue-burger-menu.git"
+    "url": ""
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0",
@@ -34,7 +34,7 @@
     "less-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.17"
   },
-  "main": "./dist/vue-burger-menu.common.js",
+  "main": "./dist/apotekuas.common.js",
   "license": "MIT",
   "eslintConfig": {
     "root": true,
@@ -61,7 +61,7 @@
     "not ie <= 8"
   ],
   "files": [
-    "dist/vue-burger-menu.common.js",
-    "dist/vue-burger-menu.umd.js"
+    "dist/apotekuas.common.js",
+    "dist/apotekuas.umd.js"
   ]
 }

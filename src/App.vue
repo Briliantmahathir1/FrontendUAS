@@ -2,41 +2,55 @@
     <div id="app">
         <component :is="currentMenu" :right="side === 'right' ? true: false">
             <a href="#">
-                <i class="fa fa-fw fa-star-o"></i>
-                <span>Favourites</span>
+                <i class="fa fa-medkit" aria-hidden="true"></i>
+                <span>Obat</span>
             </a>
             <a href="#">
-                <i class="fa fa-fw fa-bell-o"></i>
-                <span>Alerts</span>
+                <i class="fa fa-share-square" aria-hidden="true"></i>
+                <span>Supplier</span>
             </a>
             <a href="#">
-                <i class="fa fa-fw fa-envelope-o"></i>
-                <span>Messages</span>
+               <i class="fa fa-users" aria-hidden="true"></i>
+                <span>Pembeli</span>
             </a>
             <a href="#">
-                <i class="fa fa-fw fa-comment-o"></i>
-                <span>Comments</span>
+                <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Barang Masuk</span>
             </a>
             <a href="#">
-                <i class="fa fa-fw fa-bar-chart-o"></i>
-                <span>Analytics</span>
+                <i class="fa fa-outdent" aria-hidden="true"></i>
+                <span>Barang Keluar</span>
             </a>
             <a href="#">
                 <i class="fa fa-fw fa-newspaper-o"></i>
-                <span>Reading</span>
+                <span>About</span>
             </a>
         </component>
         <main id="page-wrap">
-            <img src="https://img.shields.io/npm/dt/vue-burger-menu.svg" /> &emsp;
-            <img src="https://img.shields.io/github/stars/mbj36/vue-burger-menu.svg" />
+            
             <h1>
-                <a href="https://github.com/mbj36/vue-burger-menu">vue-burger-menu</a> <br/>
+                <a >Apotek UAS</a> <br/>
             </h1>
-            <a :class="{ sideButton: true, left: true, active: this.side === 'left' }" @click="changeSide('left')">Left</a>
-            <a :class="{sideButton: true, right: true, active: this.side === 'right' }" @click="changeSide('right')">Right</a>
-
-            <h2 class="description">An off-canvas sidebar vue component with a collection of effects and styles using CSS transitions and SVG path animations.</h2>
-
+            <!-- <a :class="{ sideButton: true, left: true, active: this.side === 'left' }" @click="changeSide('left')">Left</a>
+            <a :class="{sideButton: true, right: true, active: this.side === 'right' }" @click="changeSide('right')">Right</a> -->
+            
+            <div class="card">
+        <div class="container">
+            <br>
+            <hr>
+            <br>
+            <form>
+                <input type="text" class="form-control" placeholder="User Name">
+                <br>
+                <br>
+                <input type="password" class="form-control" placeholder="Password">
+                <br>
+                <br>
+                <input type="submit" class="btn btn-outline-primary" value="Login">
+            </form>
+        </div>
+    </div>
+            
             <nav class="demo-buttons">
                 <span v-for="(menu, index) in menus" :key="index">
                     <span>
@@ -46,40 +60,22 @@
                     </span>
                 </span>
             </nav>
-            Inspired by
-            <a href="https://github.com/codrops/OffCanvasMenuEffects">Off-Canvas Menu Effects</a> and
-            <a href="https://github.com/codrops/SidebarTransitions">Sidebar Transitions</a> by Codrops
+            
         </main>
     </div>
 </template>
 
 <script>
-    import slide from './components/Menu/slide';
-    import bubble from './components/Menu/bubble';
-    import elastic from './components/Menu/elastic';
-    import falldown from './components/Menu/fallDown';
-    import push from './components/Menu/push';
-    import pushrotate from './components/Menu/pushRotate';
-    import reveal from './components/Menu/reveal';
-    import scaledown from './components/Menu/scaleDown';
-    import scalerotate from './components/Menu/scaleRotate';
-    import stack from './components/Menu/stack';
     import Menu from './components/Menu';
+    import slide from './components/Menu/slide';
+
+    
 
     export default {
       data() {
         return {
           menus: {
-            slide: { buttonText: 'Slide' },
-            push: { buttonText: 'Push' },
-            pushRotate: { buttonText: 'Push Rotate' },
-            reveal: { buttonText: 'Reveal' },
-            scaleDown: { buttonText: 'Scale Down' },
-            scaleRotate: { buttonText: 'Scale Rotate' },
-            // elastic: { buttonText: 'Elastic - (WIP)' },
-            // stack: { buttonText: 'Stack - (WIP)' },
-            bubble: { buttonText: 'Bubble' },
-            fallDown: { buttonText: 'Fall Down' }
+           
           },
           side: 'left',
           currentMenu: 'slide'
@@ -87,15 +83,6 @@
       },
       components: {
         slide,
-        bubble,
-        elastic,
-        push,
-        pushrotate,
-        scaledown,
-        scalerotate,
-        reveal,
-        stack,
-        falldown,
         Menu
       },
       methods: {
@@ -147,7 +134,7 @@
       height: 100%;
       padding: 3em 2em;
       text-align: center;
-      background: #b4bad2;
+      background: #ffffff;
       overflow: auto;
     }
 
@@ -367,4 +354,33 @@
         }
       }
     }
+
+    .row {
+    align-content: center;
+    }
+    
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  text-align: center;
+  width: 25%;
+  height: 40%;
+  position: absolute;
+  left: 38%;
+  top: 22%;
+  border-radius: 10px;
+  padding: 10px 10px;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.form-control:hover{
+    box-shadow: 0 4px 8px 0  rgba(0,0,0,0.2);
+}
 </style>
